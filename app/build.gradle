@@ -8,9 +8,7 @@ android {
     namespace 'com.mobileapp.finalproject'
     compileSdk 32
 
-    buildFeatures {
-        viewBinding true
-    }
+
 
     defaultConfig {
         applicationId "com.mobileapp.finalproject"
@@ -20,6 +18,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures {
+            viewBinding true
+        }
     }
 
     buildTypes {

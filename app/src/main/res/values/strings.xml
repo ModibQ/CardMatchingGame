@@ -11,4 +11,7 @@
     <string name="turns">Turns Taken:</string>
     <string name="click">Click Here to Play Again</string>
     <string name="again">Play Again</string>
+    <string name="settingsMenu">Settings</string>
+    <string name="aboutMenu">About</string>
+    <string name="helpMenu">Help</string>
 </resources>

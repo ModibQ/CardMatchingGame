@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Support">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/aboutFragment"
+                    android:title="@string/aboutMenu"
+                    android:icon="@drawable/aboutimage"/>
+                <item
+                    android:id="@+id/settingsFragment"
+                    android:title="@string/settingsMenu"
+                    android:icon="@drawable/settingsimage"
+                    />
+                <item
+                    android:id="@+id/helpFragment"
+                    android:title="@string/helpMenu"
+                    android:icon="@drawable/helpimage"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
