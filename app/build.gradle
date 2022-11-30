@@ -7,10 +7,10 @@ plugins {
 android {
     namespace 'com.mobileapp.finalproject'
     compileSdk 32
-
     buildFeatures {
         viewBinding true
     }
+
 
     defaultConfig {
         applicationId "com.mobileapp.finalproject"
