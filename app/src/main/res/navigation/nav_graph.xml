@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
 
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.mobileapp.finalproject.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_beginnerFragment"
+            app:destination="@id/beginnerFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_expertFragment"
+            app:destination="@id/expertFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_intermediateFragment"
+            app:destination="@id/intermediateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beginnerFragment"
+        android:name="com.mobileapp.finalproject.BeginnerFragment"
+        android:label="fragment_beginner"
+        tools:layout="@layout/fragment_beginner" >
+        <action
+            android:id="@+id/action_beginnerFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expertFragment"
+        android:name="com.mobileapp.finalproject.ExpertFragment"
+        android:label="fragment_expert"
+        tools:layout="@layout/fragment_expert" >
+        <action
+            android:id="@+id/action_expertFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/intermediateFragment"
+        android:name="com.mobileapp.finalproject.IntermediateFragment"
+        android:label="fragment_intermediate"
+        tools:layout="@layout/fragment_intermediate" >
+        <action
+            android:id="@+id/action_intermediateFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.mobileapp.finalproject.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_resultsFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.mobileapp.finalproject.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mobileapp.finalproject.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.mobileapp.finalproject.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
 </navigation>
