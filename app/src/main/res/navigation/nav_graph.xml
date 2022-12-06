@@ -55,6 +55,10 @@
         <action
             android:id="@+id/action_resultsFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
+        <argument
+            android:name="numTurns"
+            app:argType="integer"
+            />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"

@@ -3,6 +3,7 @@ package com.mobileapp.finalproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,14 @@ public class ResultsFragment extends Fragment {
         binding = FragmentResultsBinding.inflate(inflater,container, false);
         View view = binding.getRoot();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_results, container, false);
+        int turnTaken = ResultsFragmentArgs.fromBundle(requireArguments()).getNumTurns();
+        binding.textView5.setText(String.valueOf(turnTaken));
+        binding.button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_resultsFragment_to_welcomeFragment);
+            }
+        });
+        return view;
     }
 }
