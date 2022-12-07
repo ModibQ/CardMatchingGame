@@ -1,5 +1,7 @@
 package com.mobileapp.finalproject;
 
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.media.Image;
 import android.os.Bundle;
 
@@ -32,6 +34,7 @@ public class BeginnerFragment extends Fragment {
         binding = FragmentBeginnerBinding.inflate(inflater,
                 container, false);
         View view = binding.getRoot();
+
 
 
         int[] img = new int[]{R.drawable.chef, R.drawable.chef,

@@ -14,6 +14,6 @@
     <string name="settingsMenu">Settings</string>
     <string name="aboutMenu">About</string>
     <string name="helpMenu">Help</string>
-    <string name="text">Disabled</string>
+    <string name="text">Enabled</string>
     <string name="mode">Dark Mode</string>
 </resources>
