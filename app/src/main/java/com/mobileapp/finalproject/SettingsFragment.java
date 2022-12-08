@@ -1,6 +1,8 @@
 package com.mobileapp.finalproject;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -16,7 +18,9 @@ import com.mobileapp.finalproject.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
     private FragmentSettingsBinding binding;
-    SharedPreferences sharedPreferences = null;
+    boolean nightMode;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,30 +29,30 @@ public class SettingsFragment extends Fragment {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        sharedPreferences = getActivity().getSharedPreferences("night",0);
-        Boolean booleanValue = sharedPreferences.getBoolean("night_mode",true);
-        if (booleanValue){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        sharedPreferences = getActivity().getSharedPreferences("MODE", Context.MODE_PRIVATE);
+        nightMode = sharedPreferences.getBoolean("night", false);
+
+        if(nightMode) {
             binding.switch1.setChecked(true);
+            binding.switch1.setText("Enabled");
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
         binding.switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    binding.switch1.setChecked(true);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("night_mode",true);
-                    editor.commit();
-                }else {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(nightMode){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    binding.switch1.setChecked(false);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("night_mode",false);
-                    editor.commit();
-
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("night",false);
+                    binding.switch1.setText("Disabled");
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    editor = sharedPreferences.edit();
+                    editor.putBoolean("night", true);
+                    binding.switch1.setText("Enabled");
                 }
+                editor.apply();
             }
         });
 
