@@ -17,5 +17,6 @@
     <string name="text">Disabled</string>
     <string name="mode">Dark Mode</string>
     <string name="about">About Us</string>
+    <string name="high">HighScore:</string>
     <string name="help">You have to select two cards to turn over, it will reveal the image associated with the cards. If the two cards you selected have matching images that means you have successfully found a pair and the cards will remained flipped over (image side up). If the two cards selected don’t match, then they will both turn back over and you will get a chance to guess two more cards. The point of the game is to turn all the cards over image side up by finding the match. Once all the matches are found then the game is won. </string>
 </resources>
