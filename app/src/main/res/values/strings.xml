@@ -16,4 +16,5 @@
     <string name="helpMenu">Help</string>
     <string name="text">Disabled</string>
     <string name="mode">Dark Mode</string>
+    <string name="about">About Us</string>
 </resources>
